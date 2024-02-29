@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $segment = Request::segment(1);
+    if ($segment===null){
+        $segment = 'beranda';
+    }
+    return view('main', [ 'segment' => $segment ] );
 });
