@@ -37,7 +37,8 @@
 <div class="top-bar-right">
     <ul class="menu">
         <li><a href="/" class="{{ $segment === 'beranda' ? 'active' : '' }}">Beranda</a></li>
-        <li><a href="/" class="{{ $segment === 'beranda' ? 'active' : '' }}">Seputar Gunung Slamet</a></li>
+        <li><a href="/berita" class="{{ $segment === 'berita' ? 'active' : '' }}">Berita</a></li>
+        <li><a href="/panduan" class="{{ $segment === 'panduan' ? 'active' : '' }}">Panduan Booking</a></li>
         <li><a href="/kuota" class="{{ $segment === 'kuota' ? 'active' : '' }}">Cek Kuota</a></li>
         <li><a href="/sop" class="{{ $segment === 'sop' ? 'active' : '' }}" style="margin-right: 20px;">S.O.P</a></li>
       {{-- <li><a class="button" href="#">Booking Sekarang</a></li> --}}
