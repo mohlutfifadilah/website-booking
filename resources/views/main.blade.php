@@ -4,13 +4,13 @@
 <div class="row">
 
   <div class="medium-7 large-6 columns">
-    <h1>Close Your Eyes and Open Your Mind</h1>
+    <h1>Selamat Datang, Para Pendaki! </h1>
     <p class="subheader">There is beauty in space, and it is orderly. There is no weather, and there is regularity. It is predictable. Everything in space obeys the laws of physics. If you know these laws, and obey them, space will treat you kindly.</p>
     <button class="button">Booking Sekarang !</button>
   </div>
 
   <div class="show-for-large large-3 columns">
-    <img src="https://placehold.it/400x370&text=PSR1257 + 12 C" alt="picture of space">
+    <img src="{{ asset('20240306_003308_0000.png') }}" alt="picture of space">
   </div>
 
   <div class="medium-5 large-3 columns">
@@ -47,7 +47,7 @@
   <div class="column">
     <div class="callout">
       <p>Pegasi B</p>
-      <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
+      <p><img src="{{ asset('20240306_010100_0000.png') }}" alt="image of a planet called Pegasi B"></p>
       <p class="lead">Copernican Revolution caused an uproar</p>
       <p class="subheader">Find Earth-like planets life outside the Solar System</p>
     </div>
