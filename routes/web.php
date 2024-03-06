@@ -21,3 +21,55 @@ Route::get('/', function () {
     }
     return view('main', [ 'segment' => $segment ] );
 });
+
+Route::get('/berita', function() {
+    // $berita = Berita::all();
+
+    $segment = Request::segment(1);
+    if ($segment===null){
+        $segment = 'beranda';
+    }
+    // return view('berita', compact('berita'));
+    return view('berita', [ 'segment' => $segment ]);
+});
+
+Route::get('/panduan', function() {
+    // $panduan = Panduan::all();
+
+    $segment = Request::segment(1);
+    if ($segment===null){
+        $segment = 'beranda';
+    }
+    // return view('panduan', compact('panduan'));
+    return view('panduan', [ 'segment' => $segment ]);
+});
+
+Route::get('/kuota', function() {
+    // $kuota = Kuota::all();
+
+    $segment = Request::segment(1);
+    if ($segment===null){
+        $segment = 'beranda';
+    }
+    // return view('kuota', compact('kuota'));
+    return view('kuota', [ 'segment' => $segment ]);
+});
+
+Route::get('/sop', function() {
+    // $sop = SOP::all();
+
+    $segment = Request::segment(1);
+    if ($segment===null){
+        $segment = 'beranda';
+    }
+    // return view('sop', compact('sop'));
+    return view('sop', [ 'segment' => $segment ]);
+});
+
+Route::get('/register', function() {
+    $segment = Request::segment(1);
+    if ($segment===null){
+        $segment = 'beranda';
+    }
+    return view('daftar', ['segment' => $segment]);
+});

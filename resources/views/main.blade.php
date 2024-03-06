@@ -5,7 +5,7 @@
 
   <div class="medium-7 large-6 columns">
     <h1>Selamat Datang, Para Pendaki! </h1>
-    <p class="subheader">There is beauty in space, and it is orderly. There is no weather, and there is regularity. It is predictable. Everything in space obeys the laws of physics. If you know these laws, and obey them, space will treat you kindly.</p>
+    <p class="subheader">Setiap detik adalah sebuah cerita yang menunggu untuk dituliskan. Bersiaplah untuk menjelajahi dan menaklukkan gunung yang menantang!<br>Mulai petualanganmu hari ini!</p>
     <button class="button">Booking Sekarang !</button>
   </div>
 
@@ -18,7 +18,7 @@
       <form>
         <div class="row">
           <div class="small-12 columns">
-            <label>Username
+            <label>Email
               <input type="text" placeholder="">
             </label>
           </div>

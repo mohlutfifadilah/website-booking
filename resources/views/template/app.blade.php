@@ -7,17 +7,23 @@
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link rel="icon" href="{{ asset('Desain tanpa judul_20240306_013235_0000.png') }}">
     <style>
-        .menu li a.active{
-            font-weight: bold;
-            color: blue;
-            animation: 1.2ms;
-            border-bottom: 2px solid blue;
+        .menu li a.link {
+          transition: color 0.3s ease;
         }
 
-        .menu li a:hover{
-            color: blue;
-            animation: 1.2ms;
-            border-bottom: 2px solid blue;
+        .menu li a.link.active {
+          font-weight: bold;
+          color: #2299e8;
+          border-bottom: 2px solid #2299e8;
+          transform: scale(1.0);
+        }
+
+        .menu li a.link:hover {
+          color: #2299e8;
+          border-bottom: 2px solid #2299e8;
+          transition: color 0.3s ease, border-bottom 0s; /* Transisi untuk warna tetapi tidak ada transisi untuk border-bottom */
+          transition-duration: 0.3s, border-bottom 0s; /* Durasi transisi saat hover */
+          transition-timing-function: ease; /* Fungsi penyangga transisi */
         }
     </style>
   </head>
@@ -26,7 +32,7 @@
 <!-- Navigation -->
 <div class="title-bar" data-responsive-toggle="realEstateMenu" data-hide-for="small">
   <button class="menu-icon" type="button" data-toggle></button>
-  <div class="title-bar-title">Menu</div>
+  <div class="title-bar-title"></div>
 </div>
 
 <div class="top-bar fixed-top" id="realEstateMenu">
@@ -37,13 +43,13 @@
   </div>
   <div class="top-bar-right">
     <ul class="menu" style="margin-top: 5px;">
-      <li><a href="/" class="{{ $segment === 'beranda' ? 'active' : '' }}">Beranda</a></li>
-      <li><a href="/berita" class="{{ $segment === 'berita' ? 'active' : '' }}">Berita</a></li>
-      <li><a href="/panduan" class="{{ $segment === 'panduan' ? 'active' : '' }}">Panduan Booking</a></li>
-      <li><a href="/kuota" class="{{ $segment === 'kuota' ? 'active' : '' }}">Cek Kuota</a></li>
-      <li><a href="/sop" class="{{ $segment === 'sop' ? 'active' : '' }}" style="margin-right: 20px;">S.O.P</a></li>
+      <li><a href="/" class="{{ $segment === 'beranda' ? 'active' : '' }} link">Beranda</a></li>
+      <li><a href="/berita" class="{{ $segment === 'berita' ? 'active' : '' }} link">Berita</a></li>
+      <li><a href="/panduan" class="{{ $segment === 'panduan' ? 'active' : '' }} link">Panduan Booking</a></li>
+      <li><a href="/kuota" class="{{ $segment === 'kuota' ? 'active' : '' }} link">Cek Kuota</a></li>
+      <li><a href="/sop" class="{{ $segment === 'sop' ? 'active' : '' }} link" style="margin-right: 20px;">S.O.P</a></li>
       {{-- <li><a class="button" href="#">Booking Sekarang</a></li> --}}
-      <li><a href="{{ $segment === 'daftar' ? 'active' : '' }}" class="button">Daftar</a></li>
+      <li><a href="/register" class="button">Daftar</a></li>
     </ul>
   </div>
 </div>
