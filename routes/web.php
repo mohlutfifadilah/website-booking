@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LoginController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,3 +76,10 @@ Route::get('/register', function() {
     }
     return view('daftar', ['segment' => $segment]);
 });
+
+# Login
+
+Route::post('/login', [LoginController::class, 'login'])->name('login');
+
+# Admin
+Route::get('/dashboard',  [DashboardController::class, 'index']);

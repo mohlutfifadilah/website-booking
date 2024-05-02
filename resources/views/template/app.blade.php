@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation | @yield('title')</title>
+    <title>Website Booking Gunung Slamet via Dipajaya | @yield('title')</title>
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link rel="icon" href="{{ asset('Desain tanpa judul_20240306_013235_0000.png') }}">
     <style>
