@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->integer('kode_pendaki')->nullable();
             $table->integer('id_kewarganegaraan')->nullable();
             $table->integer('id_identitas')->nullable();
             $table->text('foto_identitas')->nullable();

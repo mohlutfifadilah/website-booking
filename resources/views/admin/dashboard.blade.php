@@ -333,4 +333,5 @@
 
 </div>
 <!-- End of Main Content -->
+
 @include('admin.template.footer')

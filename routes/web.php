@@ -1,10 +1,16 @@
 <?php
 
+use App\Http\Controllers\BeritaController;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\IdentitasController;
+use App\Http\Controllers\KewarganegaraanController;
+use App\Http\Controllers\KuotaController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PendaftarController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -83,3 +89,9 @@ Route::post('/login', [LoginController::class, 'login'])->name('login');
 
 # Admin
 Route::get('/dashboard',  [DashboardController::class, 'index']);
+Route::resource('users', UsersController::class);
+Route::resource('kewarganegaraan', KewarganegaraanController::class);
+Route::resource('identitas', IdentitasController::class);
+Route::resource('berita', BeritaController::class);
+Route::resource('kuota', KuotaController::class);
+Route::resource('pendaftar', PendaftarController::class);
