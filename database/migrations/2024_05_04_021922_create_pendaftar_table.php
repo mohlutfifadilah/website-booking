@@ -13,11 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('kuota', function (Blueprint $table) {
+        Schema::create('pendaftar', function (Blueprint $table) {
             $table->id();
-            $table->date('tanggal');
-            $table->integer('kuota_sisa');
-            $table->integer('kuota_full')->default(200);
+            $table->integer('kode_pendaki')->nullable();
+            $table->string('nama');
+            $table->integer('usia');
+            $table->integer('no_telepon');;
+            $table->integer('no_telepon_darurat');;
+            $table->string('alamat');
+            $table->date('tanggal_naik');
+            $table->date('tanggal_turun');
             $table->timestamps();
         });
     }
@@ -29,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kuota');
+        Schema::dropIfExists('pendaftar');
     }
 };

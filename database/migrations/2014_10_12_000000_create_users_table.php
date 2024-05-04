@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('nama_lengkap');
             $table->integer('nomor_ktp')->nullable();
             $table->integer('no_telepon')->nullable();
-            $table->integer('no_telepon_darurat')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->integer('usia')->nullable();

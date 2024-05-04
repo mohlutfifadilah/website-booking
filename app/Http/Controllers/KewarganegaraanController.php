@@ -87,7 +87,7 @@ class KewarganegaraanController extends Controller
         $kw = Kewarganegaraan::find($id);
 
         if (is_null($request->kewarganegaraan)) {
-            return redirect()->route('kewarganegaraan.edit')->with('error', 'Jenis Kewarganegaraan harus diisi');
+            return redirect()->route('kewarganegaraan.edit', $id)->with('error', 'Jenis Kewarganegaraan harus diisi');
         }
 
         $kw->update([

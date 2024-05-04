@@ -10,9 +10,9 @@
                         @csrf
                         @method('PUT')
                         <div class="form-group">
-                            <input type="text" class="form-control" id="kewarganegaraan" placeholder="Jenis Kewarganegaraan" name="kewarganegaraan" aria-describedby="kewarganegaraan" value="{{ $kw->jenis_kewarganegaraan }}">
+                            <input type="text" class="form-control" id="kewarganegaraan" placeholder="Jenis kewarganegaraan" name="kewarganegaraan" aria-describedby="kewarganegaraan" value="{{ $kw->jenis_kewarganegaraan }}">
                             @if (session('error'))
-                                <small id="kewarganegaraan" class="text-danger ml-2">
+                                <small id="identitas" class="text-danger ml-2">
                                     {{ session('error') }}
                                 </small>
                             @endif

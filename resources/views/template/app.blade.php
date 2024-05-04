@@ -44,9 +44,9 @@
   <div class="top-bar-right">
     <ul class="menu" style="margin-top: 5px;">
       <li><a href="/" class="{{ $segment === 'beranda' ? 'active' : '' }} link">Beranda</a></li>
-      <li><a href="/berita" class="{{ $segment === 'berita' ? 'active' : '' }} link">Berita</a></li>
+      <li><a href="/beritaa" class="{{ $segment === 'beritaa' ? 'active' : '' }} link">Berita</a></li>
       <li><a href="/panduan" class="{{ $segment === 'panduan' ? 'active' : '' }} link">Panduan Booking</a></li>
-      <li><a href="/kuota" class="{{ $segment === 'kuota' ? 'active' : '' }} link">Cek Kuota</a></li>
+      <li><a href="/cek_kuota" class="{{ $segment === 'cek_kuota' ? 'active' : '' }} link">Cek Kuota</a></li>
       <li><a href="/sop" class="{{ $segment === 'sop' ? 'active' : '' }} link" style="margin-right: 20px;">S.O.P</a></li>
       {{-- <li><a class="button" href="#">Booking Sekarang</a></li> --}}
       <li><a href="/register" class="button">Daftar</a></li>

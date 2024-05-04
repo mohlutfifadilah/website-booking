@@ -4,14 +4,14 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-5 text-gray-800">Tambah Data Kewarganegaraan</h1>
+                    <h1 class="h3 mb-5 text-gray-800">Tambah Data Identitas</h1>
 
-                    <form action="{{ route('kewarganegaraan.store') }} " method="POST">
+                    <form action="{{ route('identitas.store') }} " method="POST">
                         @csrf
                         <div class="form-group">
-                            <input type="text" class="form-control" id="kewarganegaraan" placeholder="Jenis kewarganegaraan" name="kewarganegaraan" aria-describedby="kewarganegaraan">
+                            <input type="text" class="form-control" id="identitas" placeholder="Jenis identitas" name="identitas" aria-describedby="identitas">
                             @if (session('error'))
-                                <small id="kewarganegaraan" class="text-danger ml-2">
+                                <small id="identitas" class="text-danger ml-2">
                                     {{ session('error') }}
                                 </small>
                             @endif

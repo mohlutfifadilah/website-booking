@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Identitas;
+use App\Models\Kewarganegaraan;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -14,6 +17,8 @@ class UsersController extends Controller
     public function index()
     {
         //
+        $user = User::whereNotNull('kode_pendaki')->get();
+        return view('admin.pengguna.index', compact('user'));
     }
 
     /**
@@ -24,6 +29,7 @@ class UsersController extends Controller
     public function create()
     {
         //
+
     }
 
     /**
@@ -46,6 +52,8 @@ class UsersController extends Controller
     public function show($id)
     {
         //
+        $user = User::find($id);
+        return view('admin.pengguna.info', compact('user'));
     }
 
     /**

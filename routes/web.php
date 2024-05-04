@@ -31,7 +31,7 @@ Route::get('/', function () {
     return view('main', [ 'segment' => $segment ] );
 });
 
-Route::get('/berita', function() {
+Route::get('/beritaa', function() {
     // $berita = Berita::all();
 
     $segment = Request::segment(1);
@@ -53,7 +53,7 @@ Route::get('/panduan', function() {
     return view('panduan', [ 'segment' => $segment ]);
 });
 
-Route::get('/kuota', function() {
+Route::get('/cek_kuota', function() {
     // $kuota = Kuota::all();
 
     $segment = Request::segment(1);

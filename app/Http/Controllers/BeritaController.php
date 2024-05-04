@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Berita;
 use Illuminate\Http\Request;
 
 class BeritaController extends Controller
@@ -14,6 +15,8 @@ class BeritaController extends Controller
     public function index()
     {
         //
+        $berita = Berita::all();
+        return view('admin.berita.index',compact('berita'));
     }
 
     /**
@@ -24,6 +27,7 @@ class BeritaController extends Controller
     public function create()
     {
         //
+        return view('admin.berita.create');
     }
 
     /**
@@ -35,6 +39,37 @@ class BeritaController extends Controller
     public function store(Request $request)
     {
         //
+        if ($request->file('gambar')) {
+            // Ambil ukuran file dalam bytes
+            $fileSize = $request->file('gambar')->getSize();
+            // Periksa apakah ukuran file melebihi batas maksimum (2 MB)
+            if ($fileSize > 2 * 1024 * 1024 || $fileSize === False) {
+                // File terlalu besar, kembalikan respons dengan pesan kesalahan
+                return redirect()->back()->with('error', 'Ukuran file tidak lebih dari 2 mb');
+            }
+            $file = $request->file('gambar');
+            $image = $request->file('gambar')->store('gambar');
+            $file->move('storage/gambar/', $image);
+            $image = str_replace('gambar/', '', $image);
+        } else {
+            $image = '';
+        }
+
+        if (is_null($request->judul)) {
+            return redirect()->route('berita.create')->with('error', 'Judul harus diisi');
+        }
+
+        if (is_null($request->isi)) {
+            return redirect()->route('berita.create')->with('error', 'Isi Berita harus diisi');
+        }
+
+        Berita::create([
+            'gambar' => $image,
+            'judul' => $request->judul,
+            'isi' => $request->isi,
+        ]);
+
+        return redirect()->route('berita.index');
     }
 
     /**
@@ -57,6 +92,8 @@ class BeritaController extends Controller
     public function edit($id)
     {
         //
+        $berita = Berita::find($id);
+        return view('admin.berita.edit', compact('berita'));
     }
 
     /**
@@ -69,6 +106,45 @@ class BeritaController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $berita = Berita::find($id);
+
+        if ($request->file('gambar')) {
+            // Ambil ukuran file dalam bytes
+            $fileSize = $request->file('gambar')->getSize();
+
+            // Periksa apakah ukuran file melebihi batas maksimum (2 MB)
+            if ($fileSize > 2 * 1024 * 1024) {
+                // File terlalu besar, kembalikan respons dengan pesan kesalahan
+                return redirect()->back()->with('error', 'Ukuran file tidak lebih dari 2 mb');
+            }
+            $file = $request->file('gambar');
+            $image = $request->file('gambar')->store('gambar');
+            $file->move('storage/gambar/', $image);
+            $image = str_replace('gambar/', '', $image);
+            if($berita->gambar){
+                unlink(storage_path('app/gambar/' . $berita->gambar));
+                unlink(public_path('storage/gambar/' . $berita->gambar));
+            }
+        } else {
+            $image = $berita->gambar;
+        }
+
+        if (is_null($request->judul)) {
+            return redirect()->route('berita.edit', $id)->with('error', 'Judul harus diisi');
+        }
+
+        if (is_null($request->isi)) {
+            return redirect()->route('berita.edit', $id)->with('error', 'Isi Berita harus diisi');
+        }
+
+        $berita->update([
+            'gambar' => $image,
+            'judul' => $request->judul,
+            'isi' => $request->isi,
+        ]);
+
+        return redirect()->route('berita.index');
     }
 
     /**
@@ -80,5 +156,14 @@ class BeritaController extends Controller
     public function destroy($id)
     {
         //
+
+        $berita = Berita::find($id);
+        if($berita->gambar){
+            unlink(storage_path('app/gambar/' . $berita->gambar));
+            unlink(public_path('storage/gambar/' . $berita->gambar));
+          }
+        $berita->delete();
+
+        return redirect()->route('berita.index');
     }
 }
