@@ -48,6 +48,14 @@
                                     </dl>
                                 </div>
                             </div>
+                            @if ($user->is_verified != TRUE)
+                                <form action="{{ route('is_verified', $user->id) }}" method="get">
+                                    @csrf
+                                    <div class="d-flex justify-content-end mb-3">
+                                        <button href="{{ route('is_verified', $user->id) }}" class="btn btn-sm btn-warning ml-auto" onclick="return confirm('Verifikasi akun ini ?');"><i class="fas fa-check-circle"></i> Verifikasi akun</button>
+                                    </div>
+                                </form>
+                            @endif
                         </div>
                     </div>
 

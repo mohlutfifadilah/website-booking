@@ -12,8 +12,46 @@
     </nav>
 </div>
 <div class="row column">
-    <h4>Kuota Pendaki : Pendakian Gunung Slamet via Dipajaya</h4>
-    <p>Data merupakan kuota yang tersedia untuk bulan <b>Maret</b><br>Angka dibawah merupakan <b>sisa kuota</b> yang tersedia</p>
+    <h4>Isi formulir dibawah ini menggunakan data diri anda yang <b>se benar benarnya</b></h4>
+</div>
+
+<div class="row">
+    <div class="columns large-6">
+        <form>
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x">
+                <div class="medium-12 cell">
+                    <label>Input Label
+                    <input type="text" placeholder=".medium-6.cell">
+                    </label>
+                </div>
+                <div class="medium-12 cell">
+                    <label>Input Label
+                    <input type="text" placeholder=".medium-6.cell">
+                    </label>
+                </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="columns large-6">
+        <form>
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x">
+                <div class="medium-12 cell">
+                    <label>Input Label
+                    <input type="text" placeholder=".medium-6.cell">
+                    </label>
+                </div>
+                <div class="medium-12 cell">
+                    <label>Input Label
+                    <input type="text" placeholder=".medium-6.cell">
+                    </label>
+                </div>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
 
 @endsection

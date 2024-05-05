@@ -22,6 +22,7 @@
                                             <th>No KTP</th>
                                             <th>No Telepon</th>
                                             <th>Alamat</th>
+                                            <th>Status</th>
                                             <th>Opsi</th>
                                         </tr>
                                     </thead>
@@ -33,6 +34,11 @@
                                                 <td>{{ $u->nomor_ktp }}</td>
                                                 <td>{{ $u->no_telepon }}</td>
                                                 <td>{{ $u->alamat }}</td>
+                                                @if ($u->is_verified != TRUE)
+                                                    <td><span class="badge badge-danger">Belum Terverifikasi</span></td>
+                                                @else
+                                                    <td><span class="badge badge-success">Verifikasi</span></td>
+                                                @endif
                                                 <td>
                                                     <div class="btn-group" role="group" aria-label="Basic example">
                                                         <a class="btn btn-sm btn-info" href="{{ route('users.show', $u->id) }}"><i class="fas fa-info-circle"></i> Detail</a>

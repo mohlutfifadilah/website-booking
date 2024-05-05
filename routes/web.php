@@ -11,6 +11,8 @@ use App\Http\Controllers\KuotaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PendaftarController;
 use App\Http\Controllers\UsersController;
+use App\Models\Berita;
+use App\Models\Kuota;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,22 +27,34 @@ use App\Http\Controllers\UsersController;
 
 Route::get('/', function () {
     $segment = Request::segment(1);
+    $berita = Berita::limit(3)->get();
     if ($segment===null){
         $segment = 'beranda';
     }
-    return view('main', [ 'segment' => $segment ] );
+    return view('main', [ 'segment' => $segment, 'berita' => $berita ] );
 });
 
 Route::get('/beritaa', function() {
-    // $berita = Berita::all();
+    $berita = Berita::all();
 
     $segment = Request::segment(1);
     if ($segment===null){
         $segment = 'beranda';
     }
     // return view('berita', compact('berita'));
-    return view('berita', [ 'segment' => $segment ]);
+    return view('berita', [ 'segment' => $segment, 'berita' => $berita ]);
 });
+
+Route::get('/berita_info/{id}', function($id){
+    $berita = Berita::find($id);
+
+    $segment = Request::segment(1);
+    if ($segment===null){
+        $segment = 'beranda';
+    }
+
+    return view('berita_info', compact('berita', 'segment'));
+})->name('berita_info');
 
 Route::get('/panduan', function() {
     // $panduan = Panduan::all();
@@ -54,14 +68,14 @@ Route::get('/panduan', function() {
 });
 
 Route::get('/cek_kuota', function() {
-    // $kuota = Kuota::all();
+    $kuota = Kuota::all();
 
     $segment = Request::segment(1);
     if ($segment===null){
         $segment = 'beranda';
     }
     // return view('kuota', compact('kuota'));
-    return view('kuota', [ 'segment' => $segment ]);
+    return view('kuota', [ 'segment' => $segment, 'kuota' => $kuota ]);
 });
 
 Route::get('/sop', function() {
@@ -82,6 +96,9 @@ Route::get('/register', function() {
     }
     return view('daftar', ['segment' => $segment]);
 });
+
+// Tambahkan route untuk URI yang diinginkan
+Route::get('/is_verified/{id}', [UsersController::class, 'verifyUser'])->name('is_verified');
 
 # Login
 

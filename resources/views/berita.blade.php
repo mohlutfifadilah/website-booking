@@ -12,48 +12,21 @@
     </nav>
 </div>
 <div class="row small-up-1 medium-up-2 large-up-3">
-  <div class="column">
-    <div class="callout">
-      <p><img src="{{ asset('20240306_010100_0000.png') }}" alt="image of a planet called Pegasi B"></p>
-      <p class="lead">Copernican Revolution caused an uproar</p>
-      <p class="subheader">Find Earth-like planets life outside the Solar System</p>
+  @foreach ($berita as $b)
+    <div class="column">
+        <div class="callout">
+            <p><img src="{{ asset('storage/gambar/' . $b->gambar) }}" alt="" style="width: 350px; height: 350px;"></p>
+            <p class="lead">{{ $b->judul }}</p>
+            <p class="subheader">{{ $b->isi }}</p>
+            <form action="{{ route('berita_info', $b->id) }}" method="get">
+            @csrf
+                <button class="button hollow expanded" href="{{ route('berita_info', $b->id) }}">
+                    Selengkapnya
+                </button>
+            </form>
+        </div>
     </div>
-  </div>
-  <div class="column">
-    <div class="callout">
-      <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
-      <p class="lead">Copernican Revolution caused an uproar</p>
-      <p class="subheader">Find Earth-like planets life outside the Solar System</p>
-    </div>
-  </div>
-  <div class="column">
-    <div class="callout">
-      <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
-      <p class="lead">Copernican Revolution caused an uproar</p>
-      <p class="subheader">Find Earth-like planets life outside the Solar System</p>
-    </div>
-  </div>
-  <div class="column">
-    <div class="callout">
-      <p><img src="{{ asset('20240306_010100_0000.png') }}" alt="image of a planet called Pegasi B"></p>
-      <p class="lead">Copernican Revolution caused an uproar</p>
-      <p class="subheader">Find Earth-like planets life outside the Solar System</p>
-    </div>
-  </div>
-  <div class="column">
-    <div class="callout">
-      <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
-      <p class="lead">Copernican Revolution caused an uproar</p>
-      <p class="subheader">Find Earth-like planets life outside the Solar System</p>
-    </div>
-  </div>
-  <div class="column">
-    <div class="callout">
-      <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
-      <p class="lead">Copernican Revolution caused an uproar</p>
-      <p class="subheader">Find Earth-like planets life outside the Solar System</p>
-    </div>
-  </div>
+    @endforeach
 </div>
 @endsection
 

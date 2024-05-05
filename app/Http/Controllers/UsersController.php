@@ -89,4 +89,17 @@ class UsersController extends Controller
     {
         //
     }
+
+     public function verifyUser($id)
+    {
+        // Temukan pengguna berdasarkan ID
+        $user = User::find($id);
+
+        // Ubah status verifikasi pengguna
+        $user->is_verified = true;
+        $user->save();
+
+        // Alihkan kembali ke halaman sebelumnya dengan pesan sukses
+        return redirect()->route('users.index');
+    }
 }
