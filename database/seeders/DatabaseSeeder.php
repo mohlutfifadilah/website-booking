@@ -43,5 +43,13 @@ class DatabaseSeeder extends Seeder
             'jenis_identitas' => 'Kartu Pelajar',
         ]);
 
+        \App\Models\Identitas::create([
+            'jenis_identitas' => 'Passport',
+        ]);
+
+        \App\Models\Identitas::create([
+            'jenis_identitas' => 'Kitas',
+        ]);
+
     }
 }

@@ -45,7 +45,7 @@ class BeritaController extends Controller
             // Periksa apakah ukuran file melebihi batas maksimum (2 MB)
             if ($fileSize > 2 * 1024 * 1024 || $fileSize === False) {
                 // File terlalu besar, kembalikan respons dengan pesan kesalahan
-                return redirect()->back()->with('error', 'Ukuran file tidak lebih dari 2 mb');
+                return redirect()->back()->with('gambar', 'Ukuran file tidak lebih dari 2 mb');
             }
             $file = $request->file('gambar');
             $image = $request->file('gambar')->store('gambar');
@@ -56,11 +56,11 @@ class BeritaController extends Controller
         }
 
         if (is_null($request->judul)) {
-            return redirect()->route('berita.create')->with('error', 'Judul harus diisi');
+            return redirect()->route('berita.create')->with('judul', 'Judul harus diisi');
         }
 
         if (is_null($request->isi)) {
-            return redirect()->route('berita.create')->with('error', 'Isi Berita harus diisi');
+            return redirect()->route('berita.create')->with('isi', 'Isi Berita harus diisi');
         }
 
         Berita::create([
@@ -116,7 +116,7 @@ class BeritaController extends Controller
             // Periksa apakah ukuran file melebihi batas maksimum (2 MB)
             if ($fileSize > 2 * 1024 * 1024) {
                 // File terlalu besar, kembalikan respons dengan pesan kesalahan
-                return redirect()->back()->with('error', 'Ukuran file tidak lebih dari 2 mb');
+                return redirect()->back()->with('gambar', 'Ukuran file tidak lebih dari 2 mb');
             }
             $file = $request->file('gambar');
             $image = $request->file('gambar')->store('gambar');
@@ -131,11 +131,11 @@ class BeritaController extends Controller
         }
 
         if (is_null($request->judul)) {
-            return redirect()->route('berita.edit', $id)->with('error', 'Judul harus diisi');
+            return redirect()->route('berita.edit', $id)->with('judul', 'Judul harus diisi');
         }
 
         if (is_null($request->isi)) {
-            return redirect()->route('berita.edit', $id)->with('error', 'Isi Berita harus diisi');
+            return redirect()->route('berita.edit', $id)->with('isi', 'Isi Berita harus diisi');
         }
 
         $berita->update([

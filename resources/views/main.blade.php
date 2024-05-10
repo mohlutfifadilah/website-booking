@@ -1,6 +1,27 @@
 @extends('template.app')
 @section('title', 'Beranda')
 @section('content')
+
+@if (session('sukses'))
+    <script>
+        // Ambil pesan alert dari session
+        let alertMessage = "{{ session('sukses') }}";
+
+        // Tampilkan pesan alert menggunakan JavaScript
+        alert(alertMessage);
+    </script>
+@endif
+
+@if (session('error'))
+    <script>
+        // Ambil pesan alert dari session
+        let alertMessage = "{{ session('error') }}";
+
+        // Tampilkan pesan alert menggunakan JavaScript
+        alert(alertMessage);
+    </script>
+@endif
+
 <div class="row">
 
   <div class="medium-7 large-6 columns">
@@ -27,10 +48,11 @@
             <label>Password
               <input type="password" placeholder="" style="margin-bottom: 5px;" name="password">
             </label>
-            @if (session('error'))
-                <p style="color: red; font-size: 13px; margin-bottom: 5px;">* {{ session('error') }}<p>
+            @if (session('credentials'))
+                <p style="color: red; font-size: 13px; margin-bottom: 5px;">* {{ session('credentials') }}<p>
             @endif
-            <button type="submit" class="button expanded" style="margin-top: 1px;">Login</button>
+            <small style="margin-bottom: 10px;">Belum punya akun ?<a href="/register"> Daftar</a></small>
+            <button type="submit" class="button expanded" style="margin-top: 3px;">Login</button>
           </div>
         </div>
       </form>

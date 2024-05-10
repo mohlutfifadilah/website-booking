@@ -38,7 +38,13 @@
                             <span class="badge badge-success">Tersedia</span>
                         @endif
                     </td>
-                    <td>dwa</td>
+                    <td>
+                        @if ($k->kuota_sisa === $k->kuota_full)
+                            <p>-</p>
+                        @else
+                            <a class="button small primary" href="{{ route('bookingg', $k->id) }}">Booking</a>
+                        @endif
+                    </td>
                 </tr>
             @endforeach
         </tbody>

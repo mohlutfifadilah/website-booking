@@ -11,25 +11,25 @@
                         <div class="form-group">
                             <label for="gambar">Upload Gambar</label>
                             <input type="file" class="form-control-file" id="gambar" name="gambar" aria-describedby="gambar">
-                            @if (session('error'))
+                            @if (session('gambar'))
                                 <small id="gambar" class="text-danger ml-2">
-                                    {{ session('error') }}
+                                    {{ session('gambar') }}
                                 </small>
                             @endif
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control" id="judul" placeholder="Judul" name="judul" aria-describedby="judul">
-                            @if (session('error'))
+                            @if (session('judul'))
                                 <small id="judul" class="text-danger ml-2">
-                                    {{ session('error') }}
+                                    {{ session('judul') }}
                                 </small>
                             @endif
                         </div>
                         <div class="form-group">
                             <textarea class="form-control" id="isi" rows="6" placeholder="Isi berita" name="isi" aria-describedby="isi"></textarea>
-                            @if (session('error'))
+                            @if (session('isi'))
                                 <small id="isi" class="text-danger ml-2">
-                                    {{ session('error') }}
+                                    {{ session('isi') }}
                                 </small>
                             @endif
                         </div>

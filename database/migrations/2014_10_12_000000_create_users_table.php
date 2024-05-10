@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->integer('kode_pendaki')->nullable();
+            $table->string('kode_pendaki', 6)->nullable();
             $table->integer('id_kewarganegaraan')->nullable();
             $table->integer('id_identitas')->nullable();
             $table->text('foto_identitas')->nullable();
             $table->string('nama_lengkap');
-            $table->integer('nomor_ktp')->nullable();
-            $table->integer('no_telepon')->nullable();
+            $table->string('nomor_identitas')->nullable();
+            $table->string('no_telepon')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->integer('usia')->nullable();

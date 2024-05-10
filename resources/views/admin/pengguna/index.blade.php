@@ -19,7 +19,7 @@
                                         <tr>
                                             <th>Kode Pendaki</th>
                                             <th>Nama Lengkap</th>
-                                            <th>No KTP</th>
+                                            <th>No Identitas</th>
                                             <th>No Telepon</th>
                                             <th>Alamat</th>
                                             <th>Status</th>
@@ -31,7 +31,7 @@
                                             <tr>
                                                 <td>{{ $u->kode_pendaki }}</td>
                                                 <td>{{ $u->nama_lengkap }}</td>
-                                                <td>{{ $u->nomor_ktp }}</td>
+                                                <td>{{ $u->nomor_identitas }}</td>
                                                 <td>{{ $u->no_telepon }}</td>
                                                 <td>{{ $u->alamat }}</td>
                                                 @if ($u->is_verified != TRUE)

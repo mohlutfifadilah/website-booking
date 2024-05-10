@@ -9,9 +9,9 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-body">
-                            <div class="text-center">
-                                <img src="{{ asset('storage/identitas/' . $user->foto_identitas ) }}" alt="" class="img-fluid" style="width: 150px; height: 150px;">
-                                <h4>Kode Pendaki : {{ $user->kode_pendaki }}</h4>
+                            <div class="text-center mb-3">
+                                <img src="{{ asset('storage/fotoidentitas/' . $user->foto_identitas ) }}" alt="" class="img-fluid" style="width: 150px; height: 150px;">
+                                <h4 class="mt-3">Kode Pendaki : {{ $user->kode_pendaki }}</h4>
                             </div>
                             <hr>
                             <div class="row">
@@ -38,13 +38,13 @@
                                 <div class="col">
                                     <dl>
                                         <dt>Nomor KTP</dt>
-                                        <dd>{{ $user->nomor_ktp }}</dd>
+                                        <dd>{{ $user->nomor_identitas }}</dd>
                                         <dt>No. Telepon</dt>
                                         <dd>{{ $user->no_telepon }}</dd>
                                         <dt>Email</dt>
                                         <dd>{{ $user->email }}</dd>
-                                        <dd>Alamat</dd>
-                                        <dt>{{ $user->alamat }}</dt>
+                                        <dt>Alamat</dt>
+                                        <dd>{{ $user->alamat }}</dd>
                                     </dl>
                                 </div>
                             </div>

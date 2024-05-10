@@ -6,6 +6,9 @@
     <title>Website Booking Gunung Slamet via Dipajaya | @yield('title')</title>
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link rel="icon" href="{{ asset('Desain tanpa judul_20240306_013235_0000.png') }}">
+    <link rel="stylesheet" href="{{ asset('css/foundation-datepicker.css') }}">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
     <style>
         .menu li a.link {
           transition: color 0.3s ease;
@@ -36,20 +39,31 @@
 </div>
 
 <div class="top-bar fixed-top" id="realEstateMenu">
-  <div class="top-bar-left">
+  <div class="top-bar-left" style="flex: 0 0 auto;">
     <ul class="menu" data-responsive-menu="accordion">
       <li class="menu-text" style="padding: 0;"><img src="{{ asset('Desain tanpa judul_20240306_002237_0000.png') }}" alt="" style="width: 200px; height: 55px;" class=""></li>
     </ul>
   </div>
-  <div class="top-bar-right">
-    <ul class="menu" style="margin-top: 5px;">
+  <div class="top-bar-right" style="width: fit-content;">
+    <ul class="menu dropdown" data-dropdown-menu style="margin-top: 5px; margin-right: 60px;">
       <li><a href="/" class="{{ $segment === 'beranda' ? 'active' : '' }} link">Beranda</a></li>
       <li><a href="/beritaa" class="{{ $segment === 'beritaa' ? 'active' : '' }} {{ $segment === 'berita_info' ? 'active' : '' }} link">Berita</a></li>
       <li><a href="/panduan" class="{{ $segment === 'panduan' ? 'active' : '' }} link">Panduan Booking</a></li>
       <li><a href="/cek_kuota" class="{{ $segment === 'cek_kuota' ? 'active' : '' }} link">Cek Kuota</a></li>
-      <li><a href="/sop" class="{{ $segment === 'sop' ? 'active' : '' }} link" style="margin-right: 20px;">S.O.P</a></li>
+      <li><a href="/sop" class="{{ $segment === 'sop' ? 'active' : '' }} link">S.O.P</a></li>
       {{-- <li><a class="button" href="#">Booking Sekarang</a></li> --}}
-      <li><a href="/register" class="button">Daftar</a></li>
+        @if (Auth::check())
+            <li>
+                <a href="#" style="margin-right: 90px;">{{ Auth::user()->nama_lengkap }}</a>
+                    <ul class="menu vertical">
+                        <li><a href="{{ route('profil') }}">Profil</a></li>
+                        <li><a href="{{ route('booking') }}">Booking</a></li>
+                        <li><a href="{{ route('logout') }}">Logout</a></li>
+                    </ul>
+            </li>
+        @else
+        <li><a href="/register" class="button">Daftar</a></li>
+        @endif
     </ul>
   </div>
 </div>
@@ -120,8 +134,14 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script src="{{ asset('js/foundation-datepicker.js') }}"></script>
+    <script src="{{ asset('js/foundation-datepickerid.js') }}"></script>
     <script>
-      $(document).foundation();
+        $(document).foundation();
+
+        $('.fdatepicker').fdatepicker({
+            language: 'id'
+        });
     </script>
   </body>
 </html>
