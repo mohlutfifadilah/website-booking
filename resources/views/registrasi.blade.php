@@ -2,52 +2,59 @@
 @section('content')
 @section('title', 'Daftar')
 <div class="row column">
-  <nav aria-label="You are here:" role="navigation">
-    <ul class="breadcrumbs">
-        <li><a href="/">Beranda</a></li>
-        <li><a href="/kuotaa">Cek Kuota</a></li>
-        <li>
-        <span class="show-for-sr">Current: </span>Registrasi
-        </li>
-    </ul>
+    <nav aria-label="You are here:" role="navigation">
+        <ul class="breadcrumbs">
+            <li><a href="/">Beranda</a></li>
+            <li><a href="/kuotaa">Cek Kuota</a></li>
+            <li><span class="show-for-sr">Current: </span>Registrasi</li>
+        </ul>
     </nav>
 </div>
 <div class="row column">
     <h4>Registrasi</h4>
 </div>
 
+@if (session('error'))
+    <script>
+        // Ambil pesan alert dari session
+        let alertMessage = "{{ session('error') }}";
+
+        // Tampilkan pesan alert menggunakan JavaScript
+        alert(alertMessage);
+    </script>
+@endif
+
 <form action="{{ route('registrasi', $kuota->id) }}" method="post">
     @csrf
     <div class="row">
-    <div class="columns large-6">
-        <div class="grid-container">
-                    <div class="grid-x grid-padding-x">
-                        <div class="medium-12 cell">
-                            <label>Tanggal Naik
-                                <input type="text" placeholder="" name="tanggal_naik" aria-describedby="tanggal_naik" id="dpd1" data-date-format="yyyy-mm-dd" data-date="2012-02-20">
-                            </label>
-                            @if (session('tanggal_naik'))
-                                <p class="help-text" id="tanggal_naik" style="color: red;">{{ session('tanggal_naik') }}</p>
-                            @endif
-                        </div>
+        <div class="columns large-6">
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x">
+                    <div class="medium-12 cell">
+                        <label>Tanggal Naik
+                            <input type="text" placeholder="" name="tanggal_naik" aria-describedby="tanggal_naik" id="dpd1" data-date-format="yyyy-mm-dd" data-date="{{ $kuota->tanggal }}" value="{{ $kuota->tanggal }}" readonly>
+                        </label>
+                        @if (session('tanggal_naik'))
+                            <p class="help-text" id="tanggal_naik" style="color: red;">{{ session('tanggal_naik') }}</p>
+                        @endif
                     </div>
                 </div>
-    </div>
-    <div class="columns large-6">
-        <div class="grid-container">
-                    <div class="grid-x grid-padding-x">
-                        <div class="medium-12 cell">
-                            <label>Tanggal Turun
-                            <input type="text" placeholder="" name="tanggal_turun" aria-describedby="tanggal_turun" id="dpd2" data-date-format="yyyy-mm-dd" data-date="2012-02-20">
-                            </label>
-                            @if (session('tanggal_turun'))
-                                <p class="help-text" id="tanggal_turun" style="color: red;">{{ session('tanggal_turun') }}</p>
-                            @endif
-                        </div>
-                    </div>
-                </div>
+            </div>
         </div>
-    </div>
+        <div class="columns large-6">
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x">
+                    <div class="medium-12 cell">
+                        <label>Tanggal Turun
+                            <input type="text" placeholder="" name="tanggal_turun" aria-describedby="tanggal_turun" id="dpd2" data-date-format="yyyy-mm-dd" data-date="2012-02-20">
+                        </label>
+                        @if (session('tanggal_turun'))
+                            <p class="help-text" id="tanggal_turun" style="color: red;">{{ session('tanggal_turun') }}</p>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="row">
         <div class="columns large-2">
@@ -67,117 +74,17 @@
         <div class="columns large-10">
             <div class="grid-container">
                 <div class="grid-x grid-padding-x">
-                    <div class="medium-12 cell">
-                        <div class="medium-12 cell text-left">
-                            <!-- Buttons (actions) -->
-                            <button class="submit success button" style="margin-top: 24px;">Daftar</button>
-                        </div>
+                    <div class="medium-12 cell text-left">
+                        <!-- Tombol Daftar -->
+                        {{-- <button class="submit success button" style="margin-top: 24px;">Daftar</button> --}}
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
     </div>
 
     <div id="pendaki-container">
-        <div class="row column">
-        <hr>
-        <p>Pendaki 1</p>
-    </div>
-    <div class="row">
-        <div class="columns large-6">
-            <div class="grid-container">
-                        <div class="grid-x grid-padding-x">
-                            <div class="medium-12 cell">
-                                <label>Nama
-                                <input type="text" placeholder="" name="nama" aria-describedby="nama">
-                                </label>
-                                @if (session('nama'))
-                                    <p class="help-text" id="nama" style="color: red;">{{ session('nama') }}</p>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-        </div>
-        <div class="columns large-6">
-            <div class="grid-container">
-                        <div class="grid-x grid-padding-x">
-                            <div class="medium-12 cell">
-                                <label>Usia
-                                <input type="text" placeholder="" name="usia" aria-describedby="usia">
-                                </label>
-                                @if (session('usia'))
-                                    <p class="help-text" id="usia" style="color: red;">{{ session('usia') }}</p>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="columns large-6">
-            <div class="grid-container">
-                        <div class="grid-x grid-padding-x">
-                            <div class="medium-12 cell">
-                                <label>No Telepon
-                                <input type="text" placeholder="" name="no_telepon" aria-describedby="no_telepon">
-                                </label>
-                                @if (session('no_telepon'))
-                                    <p class="help-text" id="no_telepon" style="color: red;">{{ session('no_telepon') }}</p>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-        </div>
-        <div class="columns large-6">
-            <div class="grid-container">
-                        <div class="grid-x grid-padding-x">
-                            <div class="medium-12 cell">
-                                <label>No Telepon Darurat
-                                <input type="text" placeholder="" name="no_telepon_darurat" aria-describedby="no_telepon_darurat">
-                                </label>
-                                @if (session('no_telepon_darurat'))
-                                    <p class="help-text" id="no_telepon_darurat" style="color: red;">{{ session('no_telepon_darurat') }}</p>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="columns large-12">
-            <div class="grid-container">
-                        <div class="grid-x grid-padding-x">
-                            <div class="medium-12 cell">
-                                <div class="medium-12 cell text-left">
-                                    <label>
-                                    Alamat
-                                        <textarea placeholder="" name="alamat" aria-describedby="alamat"></textarea>
-                                    </label>
-                                    @if (session('alamat'))
-                                        <p class="help-text" id="alamat" style="color: red;">{{ session('alamat') }}</p>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-        </div>
-    </div>
-    </div>
-
-    <div class="row" style="margin-bottom: 15px;">
-        <div class="columns large-12">
-            <div class="grid-container">
-                <div class="grid-x grid-padding-x">
-                    <div class="medium-12 cell">
-                        <p style="color: red;">* Akun harus menunggu verifikasi dari admin terlebih dahulu untuk bisa login</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Konten formulir pendaki akan ditampilkan di sini -->
     </div>
 
     <div class="row" style="margin-bottom: 15px;">
@@ -186,7 +93,7 @@
                 <div class="grid-x grid-padding-x">
                     <div class="medium-12 cell text-right">
                         <!-- Buttons (actions) -->
-                        <button class="submit success button" style="margin: 0;">Daftar</button>
+                        <button class="submit success button expanded" style="margin: 0;">Submit</button>
                     </div>
                 </div>
             </div>
@@ -196,14 +103,17 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+    // Script JavaScript
     $(document).ready(function() {
         var nowTemp = new Date();
         var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+
+        // Set nilai otomatis untuk input tanggal naik
         var checkin = $('#dpd1').fdatepicker({
-        onRender: function (date) {
-            return date.valueOf() < now.valueOf() ? 'disabled' : '';
-        }
-        }).on('changeDate', function (ev) {
+            onRender: function(date) {
+                return date.valueOf() < now.valueOf() ? 'disabled' : '';
+            }
+        }).on('changeDate', function(ev) {
             if (ev.date) {
                 if (ev.date.valueOf() > checkout.date.valueOf()) {
                     var newDate = new Date(ev.date);
@@ -211,20 +121,32 @@
                     checkout.update(newDate);
                 }
                 checkin.hide();
-                $('#dpd2')[0].focus();
+
+                // Jika tanggal naik sudah terisi, tambahkan peristiwa changeDate untuk input tanggal turun
+                if ($('#dpd1').val() !== '') {
+                    $('#dpd2').on('changeDate', function() {
+                        checkout.hide();
+                    });
+                }
             } else {
                 console.error('ev.date is null');
             }
         }).data('datepicker');
 
+        // Ambil nilai tanggal naik dari data-date
+        var tanggalNaik = $('#dpd1').data('date');
+
+        // Set nilai tanggal naik dari database ke input tanggal naik
+        $('#dpd1').val(tanggalNaik);
+
         var checkout = $('#dpd2').fdatepicker({
-            onRender: function (date) {
+            onRender: function(date) {
                 return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
             }
-        }).on('changeDate', function (ev) {
-            checkout.hide();
         }).data('datepicker');
     });
+
+
 
     document.addEventListener('DOMContentLoaded', function() {
         // Dapatkan elemen input dan container formulir
@@ -300,6 +222,7 @@
                             </div>
                         </div>
                     </div>
+                    <hr>
                 `;
 
                 // Tambahkan formulir pendaki ke dalam container
@@ -307,17 +230,24 @@
             }
         }
 
+        // Simpan elemen tombol submit dalam variabel
+        const submitButton = document.querySelector('.submit.button');
+
         // Event listener untuk input total pendaki
         totalPendakiInput.addEventListener('input', function() {
             const totalPendaki = parseInt(totalPendakiInput.value);
             if (!isNaN(totalPendaki) && totalPendaki > 0) {
                 generatePendakiForms(totalPendaki);
+                // Tampilkan kembali tombol submit setelah mengubah jumlah total pendaki
+                submitButton.style.display = 'block';
             } else {
                 // Kosongkan container jika input tidak valid
                 pendakiContainer.innerHTML = '';
+                // Sembunyikan tombol submit jika jumlah total pendaki tidak valid
+                submitButton.style.display = 'none';
             }
         });
     });
+
 </script>
 @endsection
-

@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('pendaftar', function (Blueprint $table) {
             $table->id();
-            $table->integer('kode_pendaki')->nullable();
+            $table->string('kode_pendaki', 6)->nullable();
             $table->string('nama');
             $table->integer('usia');
-            $table->integer('no_telepon');;
-            $table->integer('no_telepon_darurat');;
+            $table->string('no_telepon')->nullable();
+            $table->string('no_telepon_darurat');;
             $table->string('alamat');
             $table->date('tanggal_naik');
             $table->date('tanggal_turun');

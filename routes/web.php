@@ -18,6 +18,7 @@ use App\Models\Berita;
 use App\Models\Identitas;
 use App\Models\Kewarganegaraan;
 use App\Models\Kuota;
+use Carbon\Carbon;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,8 +74,15 @@ Route::get('/panduan', function() {
 });
 
 Route::get('/cek_kuota', function() {
-    $kuota = Kuota::all();
 
+    // Ambil tanggal sekarang
+    $today = now();
+
+    // Ambil tanggal akhir bulan
+    $endOfMonth = $today->endOfMonth();
+    // Ambil semua data kuota yang memiliki tanggal naik di antara tanggal sekarang dan akhir bulan
+    $kuota = Kuota::whereBetween('tanggal', [now()->toDateString(), $endOfMonth->toDateString()])->get();
+    // dd($kuota);
     $segment = Request::segment(1);
     if ($segment===null){
         $segment = 'beranda';
