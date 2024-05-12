@@ -6,12 +6,12 @@
         <ul class="breadcrumbs">
             <li><a href="/">Beranda</a></li>
             <li><a href="/kuotaa">Cek Kuota</a></li>
-            <li><span class="show-for-sr">Current: </span>Registrasi</li>
+            <li><span class="show-for-sr">Current: </span>Booking Pendakian</li>
         </ul>
     </nav>
 </div>
 <div class="row column">
-    <h4>Registrasi</h4>
+    <h4>Booking Pendakian</h4>
 </div>
 
 @if (session('error'))

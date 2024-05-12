@@ -13,6 +13,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PendaftarController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\RiwayatController;
 use App\Http\Controllers\UsersController;
 use App\Models\Berita;
 use App\Models\Identitas;
@@ -116,6 +117,7 @@ Route::get('/register', function() {
 
 // Tambahkan route untuk URI yang diinginkan
 Route::get('/is_verified/{id}', [UsersController::class, 'verifyUser'])->name('is_verified');
+Route::get('/is_success/{id}', [PendaftarController::class, 'success'])->name('is_success');
 
 # Login
 
@@ -139,3 +141,4 @@ Route::resource('identitas', IdentitasController::class);
 Route::resource('berita', BeritaController::class);
 Route::resource('kuota', KuotaController::class);
 Route::resource('pendaftar', PendaftarController::class);
+Route::resource('riwayat', RiwayatController::class);

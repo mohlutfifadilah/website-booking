@@ -156,7 +156,7 @@
                     </td>
                     <td>{{ $riwayat_first->tanggal_naik }}</td>
                     <td>{{ $riwayat_first->tanggal_turun }}</td>
-                    <td>{{ $harga*$count_riwayat }}</td>
+                    <td>Rp. {{ number_format($harga * $count_riwayat, 0, ',', '.') }}</td>
                     <td>{{ $riwayat_first->created_at }}</td>
                 </tr>
             </tbody>

@@ -107,6 +107,13 @@
                     <span>Pendaftar</span></a>
             </li>
 
+             <!-- Nav Item - Pendaftar -->
+            <li class="nav-item {{ Request::segment(1) === 'riwayat' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('riwayat.index') }}">
+                    <i class="fas fa-fw fa-history"></i>
+                    <span>Riwayat</span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 

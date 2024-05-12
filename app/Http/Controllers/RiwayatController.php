@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pendaftar;
-use App\Models\User;
 use Illuminate\Http\Request;
 
-class PendaftarController extends Controller
+class RiwayatController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,8 @@ class PendaftarController extends Controller
     public function index()
     {
         //
-        $pendaftar = Pendaftar::where('status', 0)->distinct('created_at')->limit(1)->get();
-        return view('admin.pendaftar.index', compact('pendaftar'));
+        $riwayat = Pendaftar::where('status', 1)->distinct('created_at')->limit(1)->get();
+        return view('admin.riwayat.index', compact('riwayat'));
     }
 
     /**
@@ -51,8 +50,8 @@ class PendaftarController extends Controller
     {
         //
         $get = Pendaftar::find($id);
-        $pendaftar = Pendaftar::where('kode_pendaki', $get->kode_pendaki)->where('status', 0)->get();
-        return view('admin.pendaftar.info',compact('pendaftar'));
+        $riwayat = Pendaftar::where('kode_pendaki', $get->kode_pendaki)->where('status', 1)->get();
+        return view('admin.riwayat.info',compact('riwayat'));
     }
 
     /**
@@ -87,15 +86,5 @@ class PendaftarController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function success($id){
-        // Temukan pengguna berdasarkan ID
-        $get = Pendaftar::find($id);
-        // Mengubah status menjadi 1 untuk semua pendaftar yang ditemukan
-        Pendaftar::where('kode_pendaki', $get->kode_pendaki)->where('status', 0)->update(['status' => 1]);
-
-        // Alihkan kembali ke halaman sebelumnya dengan pesan sukses
-        return redirect()->route('pendaftar.index');
     }
 }
