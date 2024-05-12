@@ -16,13 +16,14 @@ return new class extends Migration
         Schema::create('pendaftar', function (Blueprint $table) {
             $table->id();
             $table->string('kode_pendaki', 6)->nullable();
-            $table->string('nama');
-            $table->integer('usia');
+            $table->string('nama')->nullable();
+            $table->integer('usia')->nullable();
             $table->string('no_telepon')->nullable();
-            $table->string('no_telepon_darurat');;
-            $table->string('alamat');
-            $table->date('tanggal_naik');
-            $table->date('tanggal_turun');
+            $table->string('no_telepon_darurat')->nullable();
+            $table->string('alamat')->nullable();
+            $table->date('tanggal_naik')->nullable();
+            $table->date('tanggal_turun')->nullable();
+            $table->integer('status')->nullable();
             $table->timestamps();
         });
     }

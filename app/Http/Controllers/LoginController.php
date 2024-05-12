@@ -15,6 +15,9 @@ class LoginController extends Controller
     public function login(Request $request){
 
         // dd($request);
+        if(Auth::check()){
+            return redirect()->route('app')->with('error', 'Anda sudah login!');
+        }
         $credentials = $request->only('username', 'password');
 
         $user = User::all();

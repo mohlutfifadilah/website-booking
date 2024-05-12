@@ -45,7 +45,7 @@ Route::get('/beritaa', function() {
 
     $segment = Request::segment(1);
     if ($segment===null){
-        $segment = 'beranda';
+        $segment = 'beritaa';
     }
     // return view('berita', compact('berita'));
     return view('berita', [ 'segment' => $segment, 'berita' => $berita ]);
@@ -56,7 +56,7 @@ Route::get('/berita_info/{id}', function($id){
 
     $segment = Request::segment(1);
     if ($segment===null){
-        $segment = 'beranda';
+        $segment = 'beritaa';
     }
 
     return view('berita_info', compact('berita', 'segment'));
@@ -67,7 +67,7 @@ Route::get('/panduan', function() {
 
     $segment = Request::segment(1);
     if ($segment===null){
-        $segment = 'beranda';
+        $segment = 'panduan';
     }
     // return view('panduan', compact('panduan'));
     return view('panduan', [ 'segment' => $segment ]);
@@ -85,7 +85,7 @@ Route::get('/cek_kuota', function() {
     // dd($kuota);
     $segment = Request::segment(1);
     if ($segment===null){
-        $segment = 'beranda';
+        $segment = 'cek_kuota';
     }
     // return view('kuota', compact('kuota'));
     return view('kuota', [ 'segment' => $segment, 'kuota' => $kuota ]);
@@ -96,7 +96,7 @@ Route::get('/sop', function() {
 
     $segment = Request::segment(1);
     if ($segment===null){
-        $segment = 'beranda';
+        $segment = 'sop';
     }
     // return view('sop', compact('sop'));
     return view('sop', [ 'segment' => $segment ]);
@@ -128,6 +128,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/profil', [ProfilController::class, 'index'])->name('profil');
 Route::get('/booking', [BookingController::class, 'index'])->name('booking');
 Route::get('/booking/{id}', [BookingController::class, 'booking'])->name('bookingg');
+Route::delete('/hapus_booking/{id}', [BookingController::class, 'delete'])->name('hapus_booking');
 Route::post('/registrasi/{id}', [BookingController::class, 'registrasi'])->name('registrasi');
 
 # Admin

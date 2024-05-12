@@ -78,21 +78,18 @@
   <div class="row expanded callout secondary" style="margin-bottom: 0;">
 
     <div class="small-6 large-3 columns">
-      <img class="center-text" src="{{ asset('Desain tanpa judul_20240306_002237_0000.png') }}" alt="Photo of Uranus." style="margin-top: 23px;">
+      <img class="center-text" src="{{ asset('Desain tanpa judul_20240306_002237_0000.png') }}" alt="Photo of Uranus." style="margin-top: 110px;">
     </div>
     <div class="small-6 large-3 columns">
       <p class="lead padding-3">Lokasi</p>
-      <ul class="menu vertical">
-            <li style="padding-bottom: 16px;"><ion-icon name="logo-whatsapp"></ion-icon> Helpdesk : +62 811-2850-6666</li>
-            <li style="padding-bottom: 16px;"><ion-icon name="mail-sharp"></ion-icon> Email : dawdnw@gmail.com</li>
-      </ul>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.1660325377775!2d109.2562460250592!3d-7.221894770914457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6ff34da699bf8d%3A0xe76ca7eaf2d2fd7f!2sBasecamp%20Pendakian%20Gunung%20Slamet%20via%20Dipajaya%20-%20Pemalang!5e0!3m2!1sid!2sid!4v1715490919978!5m2!1sid!2sid" width="650" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <div class="small-6 large-3 columns">
-      <p class="lead padding-3">Informasi</p>
+      {{-- <p class="lead padding-3">Informasi</p>
       <ul class="menu vertical">
             <li style="padding-bottom: 16px;"><ion-icon name="logo-whatsapp"></ion-icon> Helpdesk : +62 811-2850-6666</li>
             <li style="padding-bottom: 16px;"><ion-icon name="mail-sharp"></ion-icon> Email : dawdnw@gmail.com</li>
-      </ul>
+      </ul> --}}
       {{-- <p class="lead padding-3" style="margin-top: 20px;">Sosial Media</p>
       <ul class="menu vertical">
             <li style="padding-bottom: 16px;"><ion-icon name="logo-instagram"></ion-icon> dawd</li>
@@ -100,11 +97,17 @@
       </ul> --}}
     </div>
     <div class="small-6 large-3 columns">
-      <p class="lead padding-3">Sosial Media</p>
-      <ul class="menu vertical">
-            <li style="padding-bottom: 16px;"><ion-icon name="logo-instagram"></ion-icon> dawd</li>
-            <li style="padding-bottom: 16px;"><ion-icon name="logo-youtube"></ion-icon> dawdaw</li>
-      </ul>
+        <p class="lead padding-3">Informasi</p>
+            <ul class="menu vertical">
+                    <li style="padding-bottom: 16px;"><ion-icon name="logo-whatsapp"></ion-icon> 0822-2162-4217 (Basecamp)</li>
+                    <li style="padding-bottom: 16px;"><ion-icon name="logo-whatsapp"></ion-icon> 0856-0053-5671 (Guide)</li>
+            </ul>
+      <p class="lead padding-3" style="margin-top: 67px;">Sosial Media</p>
+        <ul class="menu vertical">
+                <li style="padding-bottom: 16px;"><ion-icon name="logo-instagram"></ion-icon> @slametvia_dipajaya</li>
+                <li style="padding-bottom: 16px;"><ion-icon name="logo-facebook"></ion-icon> Slamet Via Dipajaya</li>
+                <li style="padding-bottom: 16px;"><ion-icon name="logo-tiktok"></ion-icon> Basecamp Slamet Via Dipajaya</li>
+        </ul>
     </div>
 
     {{-- <div class="small-6 large-6 columns">
@@ -115,18 +118,12 @@
 
   </div>
   <div class="row">
-
-    <div class="medium-6 columns">
-      <ul class="menu">
-      </ul>
+    <div class="medium-12 columns">
+        <ul class="menu">
+            <li class="menu-text" style="text-align: center; display: block;">Copyright 2024 - Slamet via Dipajaya</li>
+        </ul>
     </div>
-
-    <div class="medium-6 columns">
-      <ul class="menu float-right">
-        <li class="menu-text">Copyright 2024</li>
-      </ul>
-    </div>
-  </div>
+</div>
 
 </footer>
 

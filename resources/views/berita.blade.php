@@ -17,7 +17,7 @@
         <div class="callout">
             <p><img src="{{ asset('storage/gambar/' . $b->gambar) }}" alt="" style="width: 350px; height: 350px;"></p>
             <p class="lead">{{ $b->judul }}</p>
-            <p class="subheader">{{ $b->isi }}</p>
+            {{-- <p class="subheader">{{ $b->isi }}</p> --}}
             <form action="{{ route('berita_info', $b->id) }}" method="get">
             @csrf
                 <button class="button hollow expanded" href="{{ route('berita_info', $b->id) }}">

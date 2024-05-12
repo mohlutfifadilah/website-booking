@@ -18,8 +18,8 @@
             {{-- <div class="card-user-profile-avatar">
             <img src="https://pbs.twimg.com/profile_images/422887689612820482/sZtHMJu5.png" alt="picture of yeti" />
             </div> --}}
-            <div class="columns large-4">
-                <p class="card-user-profile-name"><b>Kode Pendaki</b> : {{ $user->kode_pendaki }}</p>
+            <div class="columns large-4" style="border-radius: 15%; padding: 20px 0 20px 0;">
+                <h5 class="card-user-profile-name"><b>Kode Pendaki</b> : {{ $user->kode_pendaki }}</h5>
             </div>
             @php
                 $kewarganegaraan = \App\Models\Kewarganegaraan::find($user->id_kewarganegaraan);

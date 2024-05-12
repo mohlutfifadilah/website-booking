@@ -32,11 +32,8 @@
                 <div class="grid-x grid-padding-x">
                     <div class="medium-12 cell">
                         <label>Tanggal Naik
-                            <input type="text" placeholder="" name="tanggal_naik" aria-describedby="tanggal_naik" id="dpd1" data-date-format="yyyy-mm-dd" data-date="{{ $kuota->tanggal }}" value="{{ $kuota->tanggal }}" readonly>
+                            <input type="text" placeholder="" name="tanggal_naik" aria-describedby="tanggal_naik" id="dpd1" data-date-format="yyyy-mm-dd" data-date="{{ $kuota->tanggal }}" value="{{ $kuota->tanggal }}" readonly disabled>
                         </label>
-                        @if (session('tanggal_naik'))
-                            <p class="help-text" id="tanggal_naik" style="color: red;">{{ session('tanggal_naik') }}</p>
-                        @endif
                     </div>
                 </div>
             </div>

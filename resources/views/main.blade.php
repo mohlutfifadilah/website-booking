@@ -27,7 +27,7 @@
   <div class="medium-7 large-6 columns">
     <h1>Selamat Datang, Para Pendaki! </h1>
     <p class="subheader">Setiap detik adalah sebuah cerita yang menunggu untuk dituliskan. Bersiaplah untuk menjelajahi dan menaklukkan gunung yang menantang!<br>Mulai petualanganmu hari ini!</p>
-    <button class="button">Booking Sekarang !</button>
+    <a href="/cek_kuota" class="button">Booking Sekarang !</a>
   </div>
 
   <div class="show-for-large large-3 columns">
@@ -75,7 +75,6 @@
         <div class="callout">
             <p><img src="{{ asset('storage/gambar/' . $b->gambar) }}" alt="" style="width: 350px; height: 350px;"></p>
             <p class="lead">{{ $b->judul }}</p>
-            <p class="subheader">{{ $b->isi }}</p>
             <form action="{{ route('berita_info', $b->id) }}" method="get">
             @csrf
                 <button class="button hollow expanded" href="{{ route('berita_info', $b->id) }}">
