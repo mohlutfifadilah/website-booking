@@ -18,7 +18,7 @@
     <ol>
         <li><h5>Registrasi Akun Pendaki</h5>
             <ol style="list-style-type: lower-alpha;">
-                <li>Masuk ke website Gunung Slamet via Dipajaya <a href="https://slametviadipajaya.org/">https://slametviadipajaya.org/</a> Klik “Booking Online”.</li>
+                <li>Masuk ke website Gunung Slamet via Dipajaya Klik “Daftar".</li>
                 <li>Klik “Daftar” pada menu website paling kanan.</li>
                 <li>Isi data form registrasi dengan valid.</li>
                 <li>Pilih identitas (KTP/SIM/Kartu Pelajar/Passport/Kitas) yang mudah terbaca dan upload scan identitasnya.</li>
@@ -34,7 +34,7 @@
         </li>
         <li style="margin-top: 20px;"><h5>Booking Online</h5><br><img src="{{ asset('alur-booking.png') }}" alt="" width="1350" height="640"  style="margin-left: auto; margin-right: auto; display: block; margin-top: 20px;">
             <ol style="list-style-type: lower-alpha;">
-                <li>Buka halaman resmi Booking Online Pendakian Gunung Slamet via Dipajaya <a href="https://slametviadipajaya.org/">https://slametviadipajaya.org/</a>.</li>
+                <li>Buka halaman resmi Booking Online Pendakian Gunung Slamet via Dipajaya.</li>
                 <li>Login menggunakan akun pendaki anda.</li>
                 <li>Klik “Booking”, Anda akan masuk ke halaman Booking pendakian.</li>
                 <li>Pastikan kuota masih ada pada Menu Cek Kuota.</li>
@@ -51,7 +51,7 @@
         </li>
         <li style="margin-top: 20px;"><h5>Pembatalan Booking</h5>
             <ol style="list-style-type: lower-alpha;">
-                <li>Buka halaman resmi Booking Online Pendakian Gunung Slamet via Dipajaya <a href="https://slametviadipajaya.org/">https://slametviadipajaya.org/</a>.</li>
+                <li>Buka halaman resmi Booking Online Pendakian Gunung Slamet via Dipajaya.</li>
                 <li>Login menggunakan akun pendaki anda.</li>
                 <li>Lalu pergi ke halaman riwayat booking pada profil sebelah pojok kanan untuk melihat riwayat booking pendakian.</li>
                 <li>Pada riwayat booking, Klik “Batal” pada opsi sebelah kanan riwayat booking.</li>
