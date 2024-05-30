@@ -53,7 +53,7 @@
       <li><a href="/sop" class="{{ $segment === 'sop' ? 'active' : '' }} link">S.O.P</a></li>
       {{-- <li><a class="button" href="#">Booking Sekarang</a></li> --}}
         @if (Auth::check())
-            <li>
+            <li style="z-index: 1000;">
                 <a href="#" style="margin-right: 90px;">{{ Auth::user()->nama_lengkap }}</a>
                     <ul class="menu vertical">
                         <li><a href="{{ route('profil') }}">Profil</a></li>
