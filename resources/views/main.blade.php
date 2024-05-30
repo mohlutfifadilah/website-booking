@@ -22,20 +22,51 @@
     </script>
 @endif
 
+<style>
+    .g {
+  position: relative;
+  background-image: url('{{ asset('20240306_003308_0000.png') }}');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  overflow: hidden; /* Agar elemen di dalamnya tidak terkena efek */
+}
+
+.g:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000; /* Warna gelap */
+  mix-blend-mode: multiply; /* Mode pencampuran warna */
+  opacity: 0.5; /* Transparansi 50% */
+  z-index: 1;
+}
+
+.g > * {
+  position: relative;
+  z-index: 2; /* Atur elemen di atas overlay */
+}
+</style>
+<div class="g">
+
+
 <div class="row">
 
-  <div class="medium-7 large-6 columns">
-    <h1>Selamat Datang, Para Pendaki! </h1>
-    <p class="subheader">Setiap detik adalah sebuah cerita yang menunggu untuk dituliskan. Bersiaplah untuk menjelajahi dan menaklukkan gunung yang menantang!<br>Mulai petualanganmu hari ini!</p>
-    <a href="/cek_kuota" class="button">Booking Sekarang !</a>
+  <div class="medium-8 large-8 columns">
+    <h1 style="margin-top: 15px; color: white;">Selamat Datang, Para Pendaki! </h1>
+    <p class="subheader" style="margin-top: 10px; color: white;">Setiap detik adalah sebuah cerita yang menunggu untuk dituliskan. Bersiaplah untuk menjelajahi dan menaklukkan gunung yang menantang!<br>Mulai petualanganmu hari ini!</p>
+    <a href="/cek_kuota" class="button" style="margin-top: 10px;">Booking Sekarang !</a>
   </div>
 
-  <div class="show-for-large large-3 columns">
+  {{-- <div class="show-for-large large-3 columns">
     <img src="{{ asset('20240306_003308_0000.png') }}" alt="picture of space">
-  </div>
+  </div> --}}
 
-  <div class="medium-5 large-3 columns">
-    <div class="callout secondary">
+  <div class="medium-4 large-3 columns">
+    <div class="callout secondary" style="margin-top: 15px;">
       <form method="post" action="{{ route('login') }}">
         @csrf
         <div class="row">
@@ -60,7 +91,7 @@
   </div>
 
 </div>
-
+</div>
 <div class="row column">
   <hr>
 </div>

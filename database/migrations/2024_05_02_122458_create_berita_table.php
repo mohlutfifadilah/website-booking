@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->text('gambar');
             $table->string('judul');
-            $table->text('isi');
+            $table->longText('isi');
             $table->timestamps();
         });
     }

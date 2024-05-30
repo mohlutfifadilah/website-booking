@@ -104,9 +104,9 @@
             </ul>
       <p class="lead padding-3" style="margin-top: 67px;">Sosial Media</p>
         <ul class="menu vertical">
-                <li style="padding-bottom: 16px;"><ion-icon name="logo-instagram"></ion-icon> @slametvia_dipajaya</li>
-                <li style="padding-bottom: 16px;"><ion-icon name="logo-facebook"></ion-icon> Slamet Via Dipajaya</li>
-                <li style="padding-bottom: 16px;"><ion-icon name="logo-tiktok"></ion-icon> Basecamp Slamet Via Dipajaya</li>
+                <li style="padding-bottom: 16px;"><a href="https://www.instagram.com/slametvia_dipajaya/" style="margin: 0; padding: 0;"><ion-icon name="logo-instagram" style=" margin-top: 3px;"></ion-icon> @slametvia_dipajaya</a></li>
+                <li style="padding-bottom: 16px;"><a href="https://www.facebook.com/profile.php?id=100078243565799" style="margin: 0; padding: 0;"><ion-icon name="logo-facebook" style=" margin-top: 3px;"></ion-icon> Slamet Via Dipajaya</a></li>
+                <li style="padding-bottom: 16px;"><a href="https://www.tiktok.com/@bcdpjypml" style="margin: 0; padding: 0;"><ion-icon name="logo-tiktok" style=" margin-top: 3px;"></ion-icon> Basecamp Slamet Via Dipajaya</a></li>
         </ul>
     </div>
 

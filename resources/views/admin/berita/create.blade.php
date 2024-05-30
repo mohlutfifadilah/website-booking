@@ -26,7 +26,7 @@
                             @endif
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" id="isi" rows="6" placeholder="Isi berita" name="isi" aria-describedby="isi"></textarea>
+                            <textarea id="summernote" name="isi" class="form-control"></textarea>
                             @if (session('isi'))
                                 <small id="isi" class="text-danger ml-2">
                                     {{ session('isi') }}
@@ -40,5 +40,12 @@
 
                 </div>
                 <!-- /.container-fluid -->
+                <script>
+                    $('#summernote').summernote({
+                        placeholder: 'Isi Berita',
+                        tabsize: 2,
+                        height: 400
+                    });
+                </script>
 
                 @include('admin.template.footer')

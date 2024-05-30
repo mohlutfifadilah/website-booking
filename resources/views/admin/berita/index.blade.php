@@ -32,7 +32,7 @@
                                                     <td class="text-secondary">Belum ada gambar</td>
                                                 @endif
                                                 <td>{{ $b->judul }}</td>
-                                                <td>{{ $b->isi }}</td>
+                                                <td>{!! $b->isi !!}</td>
                                                 <td>
                                                     <div class="btn-group" role="group" aria-label="Basic example">
                                                         <a class="btn btn-sm btn-warning" href="{{ route('berita.edit', $b->id) }}"><i class="fas fa-edit"></i> Ubah</a>
