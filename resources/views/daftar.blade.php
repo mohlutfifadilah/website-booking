@@ -94,7 +94,7 @@
             <div class="grid-container">
                 <div class="grid-x grid-padding-x">
                     <div class="medium-12 cell">
-                        <label>Nomor KTP
+                        <label>Nomor Identitas
                             <input type="text" placeholder="" name="no_identitas" aria-describedby="no_identitas">
                         </label>
                         @if (session('no_identitas'))
