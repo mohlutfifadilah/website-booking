@@ -15,7 +15,7 @@
     <p><img src="{{ asset('storage/gambar/' . $berita->gambar) }}" alt=""></p>
     <p class="lead">{{ $berita->judul }}</p>
     <small>{{ $berita->created_at }}</small>
-    <p class="subheader" style="margin-top: 50px;">{{ $berita->isi }}</p>
+    <p class="subheader" style="margin-top: 50px;">{!! $berita->isi !!}</p>
 </div>
 @endsection
 
