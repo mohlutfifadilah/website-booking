@@ -48,19 +48,11 @@
                                     </dl>
                                 </div>
                             </div>
-                            @if ($user->status === null)
-                                @if ($user->is_verified != TRUE)
-                                    <form action="{{ route('is_verified', $user->id) }}" method="get">
-                                        @csrf
-                                        <div class="d-flex justify-content-end mb-3">
-                                            <button href="{{ route('is_verified', $user->id) }}" class="btn btn-sm btn-warning ml-auto" onclick="return confirm('Verifikasi akun ini ?');"><i class="fas fa-check-circle"></i> Verifikasi akun</button>
-                                        </div>
-                                    </form>
-                                @endif
-                                <form action="{{ route('is_blacklist', $user->id) }}" method="get">
+                            @if ($user->is_verified != TRUE)
+                                <form action="{{ route('is_verified', $user->id) }}" method="get">
                                     @csrf
                                     <div class="d-flex justify-content-end mb-3">
-                                        <button href="{{ route('is_blacklist', $user->id) }}" class="btn btn-sm btn-danger ml-auto" onclick="return confirm('Pindahkan akun ini ke daftar blacklist ?');"><i class="fas fa-users-slash"></i> Blacklist akun</button>
+                                        <button href="{{ route('is_verified', $user->id) }}" class="btn btn-sm btn-warning ml-auto" onclick="return confirm('Verifikasi akun ini ?');"><i class="fas fa-check-circle"></i> Verifikasi akun</button>
                                     </div>
                                 </form>
                             @endif

@@ -49,6 +49,50 @@
             <li>Sepatu Tracking / Sepatu Gunung</li>
             <li>Tumbler / Jerigen</li>
         </ul>
+        <h5><b>Larangan-Larangan saat Pendakian</b></h5>
+        <p style="text-align: justify;">Calon Pendaki diwajibkan membawa barang dasar (akan diperiksa di basecamp) berupa :</p>
+        <ol>
+            <li>Masuk dan melakukan kegiatan pendakian tanpa izin dari pengelola basecamp.</li>
+            <li>Tidak membawa turun sampah yang dihasikan selama kegiatan pendakian.</li>
+            <li>Merusak, mengotori dan melakukan kegiatan vandalisme, seperti mencoret-coret bangunan/plang/batu/pohon, menempel stiker, memasang penunjuk arah tidak resmi, dan melakukan pencemaran lingkungan.</li>
+            <li>Membawa dan menyalakan petasan, tlare, atau kembang api di kawasan Gunung Slamet.</li>
+            <li>Mengambil, memetik, dan merusak pepohonan dan tumbuhan yang dilindungi seperti bunga edelweis.</li>
+            <li>Menangkap, membunuh, melukai, atau membawa keluar satwa dari kawasan hutan Gunung Slamet.</li>
+            <li>Membawa minuman keras, obat terlarang, senjata tajam, senapan.</li>
+        </ol>
+        <center style="color: red;">
+            <h5><b>Daftar Blacklist Pendaki</b></h5>
+        </center>
+        <div class="row column">
+            <div class="large-12">
+                <table width="100%">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Deskripsi</th>
+                            <th>Lama Hari</th>
+                            <th>Jangka Waktu</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($user as $u)
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $u->nama_lengkap }}</td>
+                                <td>{{ $u->deskripsi }}</td>
+                                <td>{{ $u->lama }} hari</td>
+                                <td>{{ $u->jangka }}</td>
+                                <td>
+                                    <h2 class="badge alert">Blacklist</h2>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
         <p style="text-align: justify;">Dan mematuhi semua peraturan yang diterapkan di Basecamp Pendakian Gunung Slamet via Dipajaya. Serta akan bertanggungjawab dan menerima sanksi apabila melanggar peraturan.</p>
   </div>
 </div>

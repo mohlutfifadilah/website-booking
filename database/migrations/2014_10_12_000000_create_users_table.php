@@ -29,6 +29,10 @@ return new class extends Migration
             $table->integer('tinggi_badan')->nullable();
             $table->string('alamat')->nullable();
             $table->integer('is_verified')->nullable();
+            $table->string('deskripsi')->nullable();
+            $table->string('lama')->nullable();
+            $table->string('jangka')->nullable();
+            $table->string('status')->nullable();
             $table->string('username');
             $table->string('password');
             $table->rememberToken();

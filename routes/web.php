@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\BlacklistController;
 use App\Http\Controllers\BookingController;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,7 @@ use App\Models\Berita;
 use App\Models\Identitas;
 use App\Models\Kewarganegaraan;
 use App\Models\Kuota;
+use App\Models\User;
 use Carbon\Carbon;
 
 /*
@@ -95,12 +97,13 @@ Route::get('/cek_kuota', function() {
 Route::get('/sop', function() {
     // $sop = SOP::all();
 
+    $user = User::whereNotNull('kode_pendaki')->where('status', '=', 0)->get();
     $segment = Request::segment(1);
     if ($segment===null){
         $segment = 'sop';
     }
     // return view('sop', compact('sop'));
-    return view('sop', [ 'segment' => $segment ]);
+    return view('sop', [ 'segment' => $segment, 'user' => $user ]);
 });
 
 Route::get('/register', function() {
@@ -117,6 +120,7 @@ Route::get('/register', function() {
 
 // Tambahkan route untuk URI yang diinginkan
 Route::get('/is_verified/{id}', [UsersController::class, 'verifyUser'])->name('is_verified');
+Route::get('/is_blacklist/{id}', [UsersController::class, 'blacklistUser'])->name('is_blacklist');
 Route::get('/is_success/{id}', [PendaftarController::class, 'success'])->name('is_success');
 
 # Login
@@ -136,6 +140,7 @@ Route::post('/registrasi/{id}', [BookingController::class, 'registrasi'])->name(
 # Admin
 Route::get('/dashboard',  [DashboardController::class, 'index']);
 Route::resource('users', UsersController::class);
+Route::resource('blacklist', BlacklistController::class);
 Route::resource('kewarganegaraan', KewarganegaraanController::class);
 Route::resource('identitas', IdentitasController::class);
 Route::resource('berita', BeritaController::class);

@@ -44,7 +44,7 @@
                         @if ($k->kuota_sisa === $k->kuota_full)
                             <h2 class="badge alert">Penuh</h2>
                         @else
-                            <p class="badge primary">Tersedia</p>
+                            <h2 class="badge primary">Tersedia</h2>
                         @endif
                     </td>
                     <td>
